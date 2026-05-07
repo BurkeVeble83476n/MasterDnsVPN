@@ -6,6 +6,8 @@
 This system is designed around compatibility with many resolver behaviors and harsh network conditions, with the goal of preserving the highest possible stability and data delivery even in the worst cases.
 
 > **Personal note:** I forked this for learning purposes and to experiment with the ARQ and multipath resolver features. The comparison table below was a key reason I chose this over DNSTT for my research.
+>
+> **My setup notes:** I'm running this with the AES encryption mode (not XOR) since I prioritize security over the marginal overhead savings. Testing with 3 resolvers in multipath mode — 1.1.1.1, 8.8.8.8, and 9.9.9.9.
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/masterking32/MasterDnsVPN) [![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/5c7b2ce0-0af6-4648-8ded-fd1e847096cd.svg)](https://oosmetrics.com/repo/masterking32/MasterDnsVPN)
 
@@ -28,7 +30,4 @@ This system is designed around compatibility with many resolver behaviors and ha
 | Real multipath | Yes (QUIC multipath) | ❌ | Yes (multi-resolver + duplication) |
 | Adaptive routing | Limited | ❌ | Advanced (latency/loss based) |
 | Design goal | High speed and efficiency | Simplicity and stability | Surviving the harshest networks — stability, speed, and efficiency |
-| Implementation language | Rust | Go | Main version is Go<br>Legacy Python version also exists |
-| Built-in balancer | 🔴 | ❌ | 🟢 (8 built-in balancing modes) |
-| Duplication system | ❌ | ❌ | Yes — increases traffic to improve reliability (configurable or can be disabled) |
-| MTU tolerance
+| Implementation language | Rust | Go | Main version is Go<br>Legacy Python version 
