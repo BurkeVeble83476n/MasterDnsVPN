@@ -8,6 +8,8 @@ This system is designed around compatibility with many resolver behaviors and ha
 > **Personal note:** I forked this for learning purposes and to experiment with the ARQ and multipath resolver features. The comparison table below was a key reason I chose this over DNSTT for my research.
 >
 > **My setup notes:** I'm running this with the AES encryption mode (not XOR) since I prioritize security over the marginal overhead savings. Testing with 3 resolvers in multipath mode — 1.1.1.1, 8.8.8.8, and 9.9.9.9.
+>
+> **Update (personal):** After a week of testing, 9.9.9.9 has been noticeably more consistent for me than 8.8.8.8 under packet loss conditions. Swapped 8.8.8.8 out for 208.67.222.222 (OpenDNS) to compare. Will update findings here.
 
 [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/masterking32/MasterDnsVPN) [![oosmetrics](https://api.oosmetrics.com/api/v1/badge/achievement/5c7b2ce0-0af6-4648-8ded-fd1e847096cd.svg)](https://oosmetrics.com/repo/masterking32/MasterDnsVPN)
 
@@ -29,5 +31,4 @@ This system is designed around compatibility with many resolver behaviors and ha
 | Shadowsocks support | ✅ | ❌ | Indirectly: TCP Forwarding mode can carry TCP-based protocols<br>e.g. Shadowsocks, VLESS/VMess, etc. |
 | Real multipath | Yes (QUIC multipath) | ❌ | Yes (multi-resolver + duplication) |
 | Adaptive routing | Limited | ❌ | Advanced (latency/loss based) |
-| Design goal | High speed and efficiency | Simplicity and stability | Surviving the harshest networks — stability, speed, and efficiency |
-| Implementation language | Rust | Go | Main version is Go<br>Legacy Python version 
+| De
